@@ -280,3 +280,11 @@ body {
         display: flex;
     }
 }
+
+/* ===== ESTILOS ESPECÍFICOS PARA ESCRITORIO ===== */
+@media (min-width: 769px) {
+    .icon i {
+        font-size: 60px;
+        color: var(--primary-green);
+    }
+}
