@@ -34,7 +34,14 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+
     </header>
 
     <!-- ===== HERO ===== -->
@@ -150,6 +157,16 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
     </script>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const nav = document.querySelector('.nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+
 
 
 </body>

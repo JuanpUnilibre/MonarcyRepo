@@ -227,3 +227,50 @@ body {
 .icon {
     margin-bottom: 15px;
 }
+
+/* ===== MENU HAMBURGUESA ===== */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-green);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--white);
+        width: 100%;
+        transform: translateY(-200%);
+        transition: 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav.active {
+        transform: translateY(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
