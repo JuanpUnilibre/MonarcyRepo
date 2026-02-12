@@ -15,18 +15,25 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicon set -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
 </head>
 
 <body>
 
     <!-- ===== HEADER ===== -->
+    <!-- HEADER: reemplazar el bloque actual -->
     <header class="header">
         <div class="container nav-container">
             <div class="logo">
                 <h1>Guia Cotidiana</h1>
             </div>
 
-            <nav class="nav">
+            <nav class="nav" id="site-nav" aria-hidden="true">
                 <ul class="nav-links">
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Consejos</a></li>
@@ -36,14 +43,19 @@
                 </ul>
             </nav>
 
-            <div class="menu-toggle" id="mobile-menu">
+            <!-- boton hamburguesa accesible -->
+            <button id="mobile-menu" class="menu-toggle" aria-expanded="false" aria-controls="site-nav"
+                aria-label="Abrir menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
-
     </header>
+
+    <!-- overlay -->
+    <div class="overlay" id="nav-overlay" aria-hidden="true"></div>
+
 
     <!-- ===== HERO ===== -->
     <section class="hero">
@@ -146,36 +158,8 @@
         </div>
     </footer>
 
-    <script>
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal');
 
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 100;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-    </script>
-
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const nav = document.querySelector('.nav');
-
-        mobileMenu.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-    </script>
-
-
-
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
