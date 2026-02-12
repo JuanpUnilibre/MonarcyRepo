@@ -228,6 +228,12 @@ body {
     margin-bottom: 15px;
 }
 
+.icon i {
+    font-size: 40px;
+    color: var(--primary-green);
+    display: inline-block;
+}
+
 /* ===== MENU HAMBURGUESA ===== */
 
 .menu-toggle {
